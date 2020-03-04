@@ -2,3 +2,4 @@ build
 dist/
 pyzabbix.egg-info/
 pyzabbix/*.pyc
+creds/local.py

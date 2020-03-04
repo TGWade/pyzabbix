@@ -34,13 +34,13 @@ def write_yaml(edict, fpath=None, file=None):
         yaml.dump(edict, outfile, indent=4)
 
 
-def write_json(edict, fpath=None, dryrun=False):
+def write_json(edict, fpath=None, file=None):
     # fpath = "%s.json" % fpathroot
     if fpath is None:
         stringout = json.dumps(edict, indent=4)
-        return stringout
-    if dryrun:
-        print("DRYRUN %s \n%s" % (fpathroot, json.dumps(edict, indent=2)))
+        if file is None:
+            return stringout
+        print(stringout, file=file)
         return
     with open(fpath, 'w') as outfile:
         json.dump(edict, outfile, indent=2)
